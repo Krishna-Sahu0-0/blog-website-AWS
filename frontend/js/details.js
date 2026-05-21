@@ -10,9 +10,7 @@ async function fetchBlog() {
 
     try {
 
-        const response = await fetch(
-            `http://localhost:3000/api/blogs/${id}`
-        );
+        const response = await fetch(apiUrl(`/api/blogs/${id}`));
 
         const blog = await response.json();
 
@@ -75,12 +73,9 @@ async function deleteBlog() {
 
     try {
 
-        await fetch(
-            `http://localhost:3000/api/blogs/${id}`,
-            {
-                method: "DELETE"
-            }
-        );
+        await fetch(apiUrl(`/api/blogs/${id}`), {
+            method: "DELETE"
+        });
 
         alert("Blog Deleted Successfully");
 

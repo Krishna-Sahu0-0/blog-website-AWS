@@ -10,9 +10,7 @@ async function fetchBlogs() {
 
         blogContainer.innerHTML = "<p>Loading blogs...</p>";
 
-        const response = await fetch(
-            "http://localhost:3000/api/blogs"
-        );
+        const response = await fetch(apiUrl("/api/blogs"));
 
         const blogs = await response.json();
 

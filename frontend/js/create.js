@@ -43,22 +43,19 @@ form.addEventListener("submit", async (e) => {
 
     try {
 
-        const response = await fetch(
-            "http://localhost:3000/api/blogs",
-            {
-                method: "POST",
+        const response = await fetch(apiUrl("/api/blogs"), {
+            method: "POST",
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-                body: JSON.stringify({
-                    title,
-                    content: blogContent,
-                    author_name: author
-                })
-            }
-        );
+            body: JSON.stringify({
+                title,
+                content: blogContent,
+                author_name: author
+            })
+        });
 
         const data = await response.json();
 

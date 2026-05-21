@@ -8,9 +8,7 @@ const form =
 
 async function loadBlog() {
 
-    const response = await fetch(
-        `http://localhost:3000/api/blogs/${id}`
-    );
+    const response = await fetch(apiUrl(`/api/blogs/${id}`));
 
     const blog = await response.json();
 
@@ -37,22 +35,19 @@ form.addEventListener("submit", async (e) => {
     const content =
         document.getElementById("content").value;
 
-    await fetch(
-        `http://localhost:3000/api/blogs/${id}`,
-        {
-            method: "PUT",
+    await fetch(apiUrl(`/api/blogs/${id}`), {
+        method: "PUT",
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-            body: JSON.stringify({
-                title,
-                content,
-                author_name: author
-            })
-        }
-    );
+        body: JSON.stringify({
+            title,
+            content,
+            author_name: author
+        })
+    });
 
     alert("Blog Updated");
 
