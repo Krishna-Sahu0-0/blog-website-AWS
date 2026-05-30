@@ -43,7 +43,7 @@ The goal is to provide a simple, practical, and attractive blog management exper
 
 ## 🖼️ Screenshots / Preview
 
-Screenshots are not added yet.
+Project screenshots will be added in future updates.
 
 > You can add images later in a `screenshots/` folder and link them here for a richer project preview.
 
